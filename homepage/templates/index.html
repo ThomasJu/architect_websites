@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Architecture website</h1>
+  <p>Welcome to Architecture website, a website developed by <em>Bob</em>!</p>
+
+  <h2>Dynamic content</h2>
+  <p>The office have employees:</p>
+  <ul>
+      {% for employee in employees %}
+        <li><strong>Employees:</strong>{{ employee.name }}</a></li>
+                                       {{ employee.title}}   
+                                       {{ employee.experience}}
+                                       {{ employee.picture}}
+        <picture>
+          <img src={{ employee.picture }}>
+        </picture>                      
+      {% endfor %}
+  </ul>
+  <p>The office do cases:</p>
+  <ul>
+    {% for case in cases %}
+      <li><strong>Case:</strong>{{ case.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
